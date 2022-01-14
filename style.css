@@ -1,38 +1,142 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
   box-sizing: border-box;
-}
-main {
-  padding: 5%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: lightgreen;
-  min-height: 100vh;
+  font-family: "Lato", sans-serif;
 }
 
-form {
-  margin: 2%;
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+header {
+  margin-block: 20px;
+}
+
+header img {
+  max-width: 180px;
+  filter: invert(1);
+  margin: 0 auto;
+}
+
+.new-todo {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-block: 12px;
+}
+
+.new-todo:hover,
+.new-todo:focus {
+  border-color: black;
+}
+
+.new-todo input {
+  flex-grow: 1;
+  padding-bottom: 3px;
+  height: 35px;
+  border: 0;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+.new-todo .button {
+  margin-left: 10px;
+  padding: 3px 10px;
+  font-size: 14px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+  background-color: greenyellow;
+}
+.new-todo input:focus {
+  border-color: black;
+  border-width: 3px;
+}
+
+.new-todo .button:hover,
+.new-todo .button:focus {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+}
+
+.todos-section {
+  margin: 20px auto;
+}
+
+.todos-list {
+  padding: 15px 30px;
+  background-color: #ccc;
+}
+
+.todo-filter {
+  color: green;
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  margin: 10px 0;
+}
+
+.todo {
+  display: flex;
+  padding: 5px;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  position: relative;
+}
+
+li {
+  display: flex;
+  padding: 5px;
+  position: relative;
+}
+
+.todo .text {
+  flex-grow: 1;
+  padding: 0 20px;
+}
+
+.todo:last-of-type {
+  border: 0;
+}
+
+.todo .text::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+}
+
+.completed.text {
+  text-decoration: line-through;
+  text-decoration-color: black;
+  color: grey;
+}
+
+.completed.text::before {
+  background-color: greenyellow;
+}
+
+.todo .delete:hover,
+.completed.delete:hover {
+  color: rgb(218, 56, 56);
+}
+
+.svg-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
   width: 100%;
-}
-form input {
-  width: 30%;
-  height: 30px;
-  font-size: 18px;
-  padding: 5px;
-  margin-right: 1%;
-}
-form button {
-  height: 30px;
-  font-size: 18px;
-  padding: 5px;
-}
-ul {
-  list-style: none;
-  font-size: 18px;
 }
